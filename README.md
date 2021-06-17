@@ -1,4 +1,5 @@
 # GitHubActionAnalysis
+[![CI](https://github.com/bergel/GitHubActionAnalysis/actions/workflows/blank.yml/badge.svg)](https://github.com/bergel/GitHubActionAnalysis/actions/workflows/blank.yml)
 
 Small metamodel to analyse YML workflows for GitHub Actions.
 
