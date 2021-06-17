@@ -9,6 +9,7 @@ unitTestsBefore := TestCase withAllSubclasses.
 
 "We identify the unit tests contained in the loaded application"
 unitTests := (TestCase withAllSubclasses copyWithoutAll: unitTestsBefore) sorted: [ :c1 :c2 | c1 name < c2 name ].
+unitTests := unitTests reject: [ :cls | cls name = 'RSSpecExamplesTest' ].
 
 "We create a file that will contain the result of the test execution"
 path := '/tmp/result.txt'.
@@ -18,7 +19,7 @@ stream := path asFileReference writeStream.
 "We run the unit tests"
 unitTests do: [ :unitTestClass |
 	res := unitTestClass buildSuite run.
-	(res hasFailures or: [ res hasErrors ]) ifTrue: [ stream nextPutAll: 'ERROR: ' ].
+	(res hasFailures or: [ res hasErrors ]) ifTrue: [ stream nextPutAll: 'VVVVVVVVVVVV'; nextPutAll: 'ERROR: ' ].
 	stream nextPutAll: unitTestClass name, ' ', res asString.
 	stream crlf
 ].
