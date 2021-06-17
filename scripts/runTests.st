@@ -4,7 +4,7 @@ unitTestsBefore := TestCase withAllSubclasses.
 "We load the application software analyzer"
 [ Metacello new
     baseline: 'GitHubActionAnalysis';
-    repository: 'github://bergel/GitHubActionAnalysis';
+    repository: 'github://bergel/GitHubActionAnalysis:main';
     load. ] on: MCMergeOrLoadWarning do: [ :warning | warning load ].
 
 "We identify the unit tests contained in the loaded application"
